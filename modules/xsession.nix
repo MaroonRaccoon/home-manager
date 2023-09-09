@@ -200,11 +200,11 @@ in {
         fi
         unset HM_XPROFILE_SOURCED
 
-        systemctl --user start hm-graphical-session.target
-
         ${cfg.initExtra}
 
         ${cfg.windowManager.command}
+
+        systemctl --user start hm-graphical-session.target
 
         systemctl --user stop graphical-session.target
         systemctl --user stop graphical-session-pre.target
